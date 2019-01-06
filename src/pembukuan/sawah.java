@@ -192,28 +192,33 @@ public class sawah extends javax.swing.JFrame {
     }//GEN-LAST:event_inp_jenistanamanItemStateChanged
 
     private void btnsimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsimpanActionPerformed
-        try {
-            if (btnsimpan.getText().equalsIgnoreCase("simpan")) {
-                String data[] = {
-                    inp_namasawah.getText(),
-                    inp_hargasewa.getText(),
-                    inpalamat.getText(),
-                    inp_jenistanaman.getSelectedItem().toString()};
-                M_sawah.tambahsawah(data);
+        if (inp_namasawah.getText().equalsIgnoreCase("") || inpalamat.getText().equalsIgnoreCase("")) {
+
+        } else {
+            try {
+                if (btnsimpan.getText().equalsIgnoreCase("simpan")) {
+                    String data[] = {
+                        inp_namasawah.getText(),
+                        inp_hargasewa.getText(),
+                        inpalamat.getText(),
+                        inp_jenistanaman.getSelectedItem().toString()};
+                    M_sawah.tambahsawah(data);
+                }
+                if (btnsimpan.getText().equalsIgnoreCase("update")) {
+                    String data[] = {
+                        idsawah.getText(),
+                        inp_namasawah.getText(),
+                        inp_hargasewa.getText(),
+                        inpalamat.getText(),
+                        inp_jenistanaman.getSelectedItem().toString()};
+                    M_sawah.updatesawah(data);
+                    btnsimpan.setText("simpan");
+                }
+                tabel_sawah.setModel(M_sawah.getdatasawah());
+                clear();
+            } catch (SQLException ex) {
+                Logger.getLogger(sawah.class.getName()).log(Level.SEVERE, null, ex);
             }
-            if (btnsimpan.getText().equalsIgnoreCase("update")) {
-                String data[] = {
-                    idsawah.getText(),
-                    inp_namasawah.getText(),
-                    inp_hargasewa.getText(),
-                    inpalamat.getText(),
-                    inp_jenistanaman.getSelectedItem().toString()};
-                M_sawah.updatesawah(data);
-                btnsimpan.setText("simpan");
-            }
-            tabel_sawah.setModel(M_sawah.getdatasawah());
-        } catch (SQLException ex) {
-            Logger.getLogger(sawah.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnsimpanActionPerformed
 
@@ -235,7 +240,7 @@ public class sawah extends javax.swing.JFrame {
         inpalamat.setText(model.getValueAt(selectindex, 3).toString());
         int getindextanaman = 0;
         for (int i = 0; i < piltanaman.length; i++) {
-            if (model.getValueAt(selectindex, 3).toString().equalsIgnoreCase(piltanaman[i])) {
+            if (model.getValueAt(selectindex, 4).toString().equalsIgnoreCase(piltanaman[i])) {
                 getindextanaman = i;
             }
         }
@@ -257,7 +262,7 @@ public class sawah extends javax.swing.JFrame {
     }//GEN-LAST:event_btndetailActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-this.dispose();
+        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
     public void clear() {
         idsawah.setText("");
@@ -267,6 +272,7 @@ this.dispose();
         inp_jenistanaman.setSelectedIndex(0);
         inp_namasawah.setText("");
         inpalamat.setText("");
+        btnsimpan.setText("simpan");
 
     }
 

@@ -66,7 +66,7 @@ public class detailsawah extends javax.swing.JFrame {
         }
         txtdanakeluar.setText(uangkeluar + "");
         txtdanamasuk.setText(uangmasuk + "");
-
+keuntungan.setText((uangmasuk-uangkeluar)+"");
     }
 
     public void hapusno(JTable model) {
@@ -111,6 +111,8 @@ public class detailsawah extends javax.swing.JFrame {
         inp_keterangan = new javax.swing.JTextArea();
         btnclear = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        keuntungan = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -235,6 +237,12 @@ public class detailsawah extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
 
+        jLabel3.setText("keuntungan");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 420, -1, 20));
+
+        keuntungan.setText("jLabel4");
+        getContentPane().add(keuntungan, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 420, 180, 20));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -304,7 +312,7 @@ public class detailsawah extends javax.swing.JFrame {
 
     private void tabelmasukMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelmasukMouseClicked
         setdetailsawah(tabelmasuk);
-        btnhapus.setEnabled(false);
+        btnhapus.setEnabled(true);
     }//GEN-LAST:event_tabelmasukMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -367,6 +375,7 @@ public class detailsawah extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -375,6 +384,7 @@ public class detailsawah extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JLabel keuntungan;
     private javax.swing.JTable tabelkeluar;
     private javax.swing.JTable tabelmasuk;
     private javax.swing.JLabel txtdanakeluar;
