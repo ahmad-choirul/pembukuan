@@ -238,6 +238,12 @@ public class sawah extends javax.swing.JFrame {
         inp_namasawah.setText(model.getValueAt(selectindex, 1).toString());
         inp_hargasewa.setText(model.getValueAt(selectindex, 2).toString());
         inpalamat.setText(model.getValueAt(selectindex, 3).toString());
+        if (model.getValueAt(selectindex, 2).toString().equalsIgnoreCase("0")) {
+            inp_jenissawah.setSelectedIndex(1);
+        } else {
+            inp_jenissawah.setSelectedIndex(0);
+
+        }
         int getindextanaman = 0;
         for (int i = 0; i < piltanaman.length; i++) {
             if (model.getValueAt(selectindex, 4).toString().equalsIgnoreCase(piltanaman[i])) {

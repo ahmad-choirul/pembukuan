@@ -5,6 +5,7 @@
  */
 package pembukuan;
 
+import java.awt.Color;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -66,7 +67,13 @@ public class detailsawah extends javax.swing.JFrame {
         }
         txtdanakeluar.setText(uangkeluar + "");
         txtdanamasuk.setText(uangmasuk + "");
-keuntungan.setText((uangmasuk-uangkeluar)+"");
+        if (uangmasuk - uangkeluar >= 0) {
+            keuntungan.setForeground(Color.green);
+            System.out.println("untung");
+        } else {
+            keuntungan.setForeground(Color.red);
+        }
+        keuntungan.setText((uangmasuk - uangkeluar) + "");
     }
 
     public void hapusno(JTable model) {
@@ -240,6 +247,7 @@ keuntungan.setText((uangmasuk-uangkeluar)+"");
         jLabel3.setText("keuntungan");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 420, -1, 20));
 
+        keuntungan.setBackground(new java.awt.Color(255, 255, 255));
         keuntungan.setText("jLabel4");
         getContentPane().add(keuntungan, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 420, 180, 20));
 

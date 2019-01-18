@@ -59,7 +59,8 @@ public class menu extends javax.swing.JFrame {
                 .addGap(147, 147, 147)
                 .addComponent(jButton3)
                 .addGap(137, 137, 137)
-                .addComponent(jButton2))
+                .addComponent(jButton2)
+                .addContainerGap(121, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -68,7 +69,8 @@ public class menu extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1)
                     .addComponent(jButton3)
-                    .addComponent(jButton2)))
+                    .addComponent(jButton2))
+                .addContainerGap(210, Short.MAX_VALUE))
         );
 
         pack();
